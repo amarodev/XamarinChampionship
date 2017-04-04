@@ -5,20 +5,17 @@ namespace Reto3.Services
 {
     public class ServiceHelper
     {
-        MobileServiceClient clienteServicio = new MobileServiceClient(@"http://xamarinchampions.azurewebsites.net");
+        private readonly MobileServiceClient _clienteServicio = new MobileServiceClient(@"http://xamarinchampions.azurewebsites.net");
+        private IMobileServiceTable<TorneoItem> _torneoItemTable;
 
-        private IMobileServiceTable<TorneoItem> _TorneoItemTable;
-
-        public async Task InsertarEntidad(string direccionCorreo, string reto, string AndroidId)
+        public async Task InsertarEntidad(string direccionCorreo, string reto, string androidId)
         {
-            _TorneoItemTable = clienteServicio.GetTable<TorneoItem>();
-
-          
-            await _TorneoItemTable.InsertAsync(new TorneoItem
+            _torneoItemTable = _clienteServicio.GetTable<TorneoItem>();
+            await _torneoItemTable.InsertAsync(new TorneoItem
             {
                 Email = direccionCorreo, 
                 Reto = reto,
-                DeviceId = AndroidId                
+                DeviceId = androidId                
             });
         }
     }
