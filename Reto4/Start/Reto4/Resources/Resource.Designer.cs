@@ -87,6 +87,9 @@ namespace Reto4
 			// aapt resource value: 0x7f050004
 			public const int textViewUrlPrivacidad = 2131034116;
 			
+			// aapt resource value: 0x7f050008
+			public const int txtList = 2131034120;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
