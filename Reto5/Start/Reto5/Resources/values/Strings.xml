@@ -5,4 +5,5 @@
   <string name="Bienvenida">Este reto consiste en utlizar SQL Lite y Offline Sync</string>
   <string name="AvisoPrivacidad">Declaración de privacidad de Microsoft</string>
   <string name="UrlPrivacidad">https://privacy.microsoft.com/es-mx/privacystatement</string>
+  <string name="CheckLegend">Todos</string>
 </resources>

@@ -66,11 +66,14 @@ namespace Reto5
 			// aapt resource value: 0x7f050002
 			public const int BtnRegistro = 2131034114;
 			
+			// aapt resource value: 0x7f050005
+			public const int chkAll = 2131034117;
+			
 			// aapt resource value: 0x7f050001
 			public const int imageViewCinturon = 2131034113;
 			
-			// aapt resource value: 0x7f050005
-			public const int scrollView1 = 2131034117;
+			// aapt resource value: 0x7f050006
+			public const int scrollView1 = 2131034118;
 			
 			// aapt resource value: 0x7f050003
 			public const int textViewAvisoPrivacidad = 2131034115;
@@ -78,8 +81,8 @@ namespace Reto5
 			// aapt resource value: 0x7f050000
 			public const int textViewResult = 2131034112;
 			
-			// aapt resource value: 0x7f050006
-			public const int textViewResults = 2131034118;
+			// aapt resource value: 0x7f050007
+			public const int textViewResults = 2131034119;
 			
 			// aapt resource value: 0x7f050004
 			public const int textViewUrlPrivacidad = 2131034116;
@@ -121,6 +124,9 @@ namespace Reto5
 			
 			// aapt resource value: 0x7f040002
 			public const int Bienvenida = 2130968578;
+			
+			// aapt resource value: 0x7f040005
+			public const int CheckLegend = 2130968581;
 			
 			// aapt resource value: 0x7f040000
 			public const int Registro = 2130968576;

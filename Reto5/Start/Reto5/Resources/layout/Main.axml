@@ -30,9 +30,21 @@
         android:layout_height="wrap_content"
         android:id="@+id/textViewUrlPrivacidad"
         android:layout_marginBottom="6.5dp" />
-     <TextView
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkAll"
+        android:text="@string/CheckLegend" />
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+        <TextView
             android:text="Registros: "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textViewResults" />
+    </ScrollView>
 </LinearLayout>
