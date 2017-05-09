@@ -11,16 +11,15 @@ namespace Reto6
     [Activity(Label = "Reto 6 - Xamarin Championship", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-
-        Button btnSiguiente;
+        private Button _btnSiguiente;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
             // Obtener una referencia al botón Siguiente
-            btnSiguiente = FindViewById<Button>(Resource.Id.btnSiguiente);
+            _btnSiguiente = FindViewById<Button>(Resource.Id.btnSiguiente1);
             // Registrar el manejador de evento click del botón Siguiente
-            btnSiguiente.Click += BtnSiguienteClick;
+            _btnSiguiente.Click += BtnSiguienteClick;
         }
 
         private void BtnSiguienteClick(object sender, EventArgs e)
@@ -38,7 +37,7 @@ namespace Reto6
             // El siguiente código se ejecutará si el registro de la actividad fue exitoso y si la actividad RegistroActivity fue iniciada desde la actividad principal de esta aplicación (código 1)
             if(requestCode == 1 && resultCode == Result.Ok)
             {
-                btnSiguiente.Visibility = Android.Views.ViewStates.Invisible;
+                _btnSiguiente.Visibility = Android.Views.ViewStates.Invisible;
                 Toast.MakeText(this, "Felicidades! Reto 6 completado.", ToastLength.Long).Show();
             }
         }
