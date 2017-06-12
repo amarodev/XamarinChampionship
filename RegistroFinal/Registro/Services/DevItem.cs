@@ -1,38 +1,22 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
 
-namespace RegistroXamarinChampionship.Services
+namespace FinalXamarinChampionship.Services
 {
     public class DevItem
     {
-        private string _id;
-        private string _email;
-
         [JsonProperty(PropertyName = "id")]
-        public string Id
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-            }
-        }
+        public string Id { get; set; }
 
         [JsonProperty(PropertyName = "Email")]
-        public string Email
-        {
-            get { return _email; }
-            set
-            {
-                _email = value;
-            }
-        }
+        public string Email { get; set; }
+
         public string Text { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public string Invitacion { get; set; }  //Ejemplo dev001
-        public string Participacion { get; set; } //Presencial | Remoto
-        public string Estacionamiento { get; set; } //Ingresar placas si quieres utilizar el estacionamiento
+        public string Invitacion { get; set; }  
+        public string Participacion { get; set; } 
+        public string Estacionamiento { get; set; } 
         public bool Complete { get; set; }
 
         [Version]

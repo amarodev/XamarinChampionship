@@ -1,45 +1,44 @@
-﻿using Microsoft.WindowsAzure.MobileServices;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.WindowsAzure.MobileServices;
 
-namespace RegistroXamarinChampionship.Services
+namespace FinalXamarinChampionship.Services
 {
     public class ServiceHelper
     {
-        MobileServiceClient clienteServicio = new MobileServiceClient(@"http://registrofinalxamarinchampions.azurewebsites.net");
+        private readonly MobileServiceClient _clienteServicio =
+            new MobileServiceClient(@"http://registrofinalxamarinchampions.azurewebsites.net");
 
-        private IMobileServiceTable<DevItem> _DevItemTable;
+        private IMobileServiceTable<DevItem> _devItemTable;
 
         public async Task InsertarEntidad(
-            string Nombre, string Apellido, string Email, string Invitacion, 
-            int Participacion, string Estacionamiento, string AndroidId)
+            string nombre, string apellido, string email, string invitacion,
+            int participacion, string estacionamiento, string androidId)
         {
-            _DevItemTable = clienteServicio.GetTable<DevItem>();
+            _devItemTable = _clienteServicio.GetTable<DevItem>();
+            var registroParticipacion = "Remoto";
 
-            string RegistroParticipacion = "Remoto";
-
-            if(Participacion == 1)
+            if (participacion == 1)
             {
-                RegistroParticipacion = "Presencial";
+                registroParticipacion = "Presencial";
             }
 
             try
             {
-                await _DevItemTable.InsertAsync(new DevItem
+                await _devItemTable.InsertAsync(new DevItem
                 {
-                    Nombre = Nombre,
-                    Apellido = Apellido,
-                    Email = Email,
-                    Invitacion = Invitacion,
-                    Participacion = RegistroParticipacion,
-                    Estacionamiento = Estacionamiento,
-                    Text = AndroidId
+                    Nombre = nombre,
+                    Apellido = apellido,
+                    Email = email,
+                    Invitacion = invitacion,
+                    Participacion = registroParticipacion,
+                    Estacionamiento = estacionamiento,
+                    Text = androidId
                 });
             }
-            catch (System.Exception exc)
+            catch (System.Exception)
             {
-                string msg = exc.Message;
+                // ignored
             }
-          
         }
     }
 }
